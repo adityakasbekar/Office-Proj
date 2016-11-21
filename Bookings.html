@@ -1,0 +1,164 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.0.0/bootstrap-social.css"><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+<style>
+.map-container {
+	width: 100%;
+	
+}
+.map-container iframe{
+	width: 100%;
+	display: block;
+	pointer-events: none;
+	position: relative; /* IE needs a position other than static */
+}
+.map-container iframe.clicked{
+	pointer-events: auto;
+}
+#lightup:hover{
+	color: #989899;
+}
+
+.holder{    
+    position:relative;
+}
+.frame{
+    width: 100%;
+    height:100%;
+}
+.bar{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+</style>
+<link href="style2.css" rel="stylesheet"/>
+</head>
+<body style="font-family: 'Nunito', sans-serif;">
+<div class="container-fluid">
+	
+	<nav class="navbar navbar-inverse" style="padding:1%">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span> 
+		  </button>
+		  <a class="navbar-brand" href="#">CUBICAL MANAGER</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">      
+		  <ul class="nav navbar-nav navbar-right">
+			<form class="navbar-form navbar-left">
+			  <div class="form-group">
+				<input type="text" class="form-control" placeholder="Username">
+			  </div>
+			  <div class="form-group">
+				<input type="password" class="form-control" placeholder="**********">
+			  </div>
+			  <button type="submit" class="btn btn-primary">Login</button>
+			</form>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+	
+	<div class="holder">
+	<div class="map-container">
+		<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7612.431494122314!2d78.34687227287023!3d17.44938490216574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93bb5fb5fa3b%3A0x35bf2fd6edef3273!2sTCS+Synergy+park%2C+Indian+Immunologicals+Colony%2C+Gachibowli%2C+Hyderabad%2C+Telangana+500032!5e0!3m2!1sen!2sin!4v1479735015893" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7612.431494122314!2d78.34687227287023!3d17.44938490216574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93bb5fb5fa3b%3A0x35bf2fd6edef3273!2sTCS+Synergy+park%2C+Indian+Immunologicals+Colony%2C+Gachibowli%2C+Hyderabad%2C+Telangana+500032!5e0!3m2!1sen!2sin!4v1479735015893" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div>	
+	<div class="bar">
+		<div class="col-lg-6"></div>
+		<div class="col-lg-3 ">
+		<br/><br/><br/><br/><br/><br/><br/>
+			<form>
+				  <div class="form-group">
+					<label for="zones">Zone</label>
+					<select class="form-control" id="zones">
+					  <option>1</option>
+					  <option>2</option>				  
+					</select>
+				  </div>
+				  <div class="form-group">
+					<label for="floors">Floor</label>
+					<select class="form-control" id="floors">
+					  <option></option>				  
+					</select>
+				  </div>
+				  <div class="form-group">
+					<label for="cubicles">Cubicle</label>
+					<select class="form-control" id="cubicles">
+					  <option></option>				  
+					</select>
+				  </div>
+				  <div class="form-group">
+					<label for="sdate">Start Date</label>
+					<input type="Date" class="form-control" id="sdate">
+				  </div>
+				  <div class="form-group">
+					<label for="nd">No. of Days</label>
+					<input type="number" class="form-control" id="nd">
+				  </div>
+			  </form>
+		
+		
+	</div>
+	</div>
+	
+	<div class="row text-center" style="padding:30px; background-color:rgba(30,29,34,0.98);margin-top:1.5% ; color:#989899">
+            <div class="col-lg-6">
+			<br/>
+                <address>
+                    <strong>TATA Consultancy Services Ltd.</strong><br>
+                    Synergy Park, Gachibowli<br>
+                    Hyderabad, Telangana 500032<br>
+                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                </address>
+              <br />
+            </div>
+
+            <div class="col-lg-6 text-center">
+			<br/>
+                <strong>CONNECT WITH US</strong><br /><BR />
+                <a class="btn btn-social-icon btn-twitter" href="https://twitter.com/TCS">
+                    <span class="fa fa-twitter"></span>
+                </a>
+                <a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/TataConsultancyServices/?fref=ts">
+                    <span class="fa fa-facebook"></span>
+                </a>
+                <a class="btn btn-social-icon btn-instagram" href="https://www.instagram.com/tcsglobal/">
+                    <span class="fa fa-instagram"></span>
+                </a>
+                <a class="btn btn-social-icon btn-google" href="https://plus.google.com/u/0/+TataConsultancyServices">
+                    <span class="fa fa-google"></span>
+                </a>
+                <br />	<br />
+            </div>
+            
+        </div>
+         <!--<div class="row text-center" style="background-color:#030D10; padding:3%"> -->
+		 <div class="row text-center" style="background-color:rgba(3,13,16,0.98); padding:2%">
+            <span id="lightup">&copy; 2016 | <b>TATA</b> Consultancy Services Ltd.</span>
+        </div>
+</div>
+	
+	
+</body>
+</html>
