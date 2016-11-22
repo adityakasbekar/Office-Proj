@@ -1,0 +1,132 @@
+
+@{
+    ViewBag.Title = "WelcomeHome";
+}
+@*<script>
+
+        var uri = '../api/DashboardDataAPI/GetBuildingEntries';
+        $(document).ready(function loadData() {
+            if ($.session.get('Username') == 'out') {
+                window.location.replace("./Index");
+            }
+            $('#LoggedUser').hide();
+            $('#LoggedPassword').hide();
+            $('#submit-login').hide();
+            $('#logout').show();
+            $('#username').html($.session.get('Username'));
+                $.getJSON(uri)
+                    .done(function (data) {
+                        $('#products').empty();
+                        $('#s-p-odc1').html(((data[0] * 100) / 168).toFixed(2) + '%');
+                        $('#s-p-odc2').html(((data[1] * 100) / 54).toFixed(2) + '%');
+                        $('#odc-1-data').css('background', 'linear-gradient(0deg, #337ab7, #337ab7 ' + ((data[0] * 100) / 168).toFixed(2) + '%, transparent ' + ((data[0] * 100) / 168).toFixed(2) + '%, transparent 100%)')
+                        $('#odc-2-data').css('background', 'linear-gradient(0deg, #337ab7, #337ab7 ' + ((data[1] * 100) / 54).toFixed(2) + '%, transparent ' + ((data[1] * 100) / 54).toFixed(2) + '%, transparent 100%)')
+                    });
+        });
+    </script>*@
+<script type="text/javascript">
+
+    var fun1 = new CanvasJS.Chart("chartContainer1", {
+        title: {
+            text: "ODC 1"
+        },
+        animationEnabled: true,
+        theme: "theme2",
+        data: [
+        {
+            type: "doughnut",
+            indexLabelFontFamily: "Garamond",
+            indexLabelFontSize: 20,
+            startAngle: 0,
+            indexLabelFontColor: "dimgrey",
+            indexLabelLineColor: "darkgrey",
+            toolTipContent: "{y} %",
+
+            dataPoints: [
+            { y: 51.04, indexLabel: "Occupied {y}%" },
+            { y: 40.83, indexLabel: "Vacant {y}%" },
+            ]
+        }
+        ]
+    });
+
+    var fun2 = new CanvasJS.Chart("chartContainer2", {
+        title: {
+            text: "ODC 2"
+        },
+        animationEnabled: true,
+        theme: "theme2",
+        data: [
+        {
+            type: "doughnut",
+            indexLabelFontFamily: "Garamond",
+            indexLabelFontSize: 20,
+            startAngle: 0,
+            indexLabelFontColor: "dimgrey",
+            indexLabelLineColor: "darkgrey",
+            toolTipContent: "{y} %",
+
+            dataPoints: [
+            { y: 51.04, indexLabel: "Occupied {y}%" },
+            { y: 40.83, indexLabel: "Vacant {y}%" },
+            ]
+        }
+        ]
+    });
+
+    window.onload = function () {
+        fun1.render();
+        fun2.render();
+
+    }
+
+
+
+
+</script>
+
+<script src="~/scripts/canvasjs.min.js"></script>
+<div class="row">
+    <div class="col-lg-6">
+        <div id="chartContainer1" style="height: 400px; width: 100%;">
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div id="chartContainer2" style="height: 400px; width: 100%;">
+        </div>
+    </div>
+</div>
+
+<div class="row pointer" style="display: none;" id="back-button">
+    <img src="~/images/back_icon.png" height="40" style="display:inline-block;" /> <label class="back-button" style="display:inline-block;">Back</label>
+</div>
+<div class="row" id="buildings-container-odc-1" style="display: none;">
+    <div class="col-sm-3">
+        <div class="floors pointer" id="odc-1-f1" style="background: linear-gradient(90deg, #2F353E, #2F353E 10%, transparent 10%, transparent 100%);"> F1 (10%)</div><br />
+        <div class="floors pointer" id="odc-1-f2" style="background: linear-gradient(90deg, #2F353E, #2F353E 10%, transparent 10%, transparent 100%);"> F2 (10%)</div><br />
+    </div>
+    <div class="col-sm-3">
+        <div class="floors pointer" id="odc-1-f3" style="background: linear-gradient(90deg, #2F353E, #2F353E 10%, transparent 10%, transparent 100%);"> F3 (10%)</div><br />
+        <div class="floors pointer" id="odc-1-f4" style="background: linear-gradient(90deg, #2F353E, #2F353E 10%, transparent 10%, transparent 100%);"> F4 (10%)</div><br />
+    </div>
+    <div class="col-sm-3">
+        <div class="floors pointer" id="odc-1-f5" style="background: linear-gradient(90deg, #2F353E, #2F353E 10%, transparent 10%, transparent 100%);"> F5 (10%)</div><br />
+        <div class="floors pointer" id="odc-1-f6" style="background: linear-gradient(90deg, #2F353E, #2F353E 10%, transparent 10%, transparent 100%);"> F6 (10%)</div><br />
+    </div>
+    <div class="col-sm-3">
+        <div class="floors pointer" id="odc-1-f7" style="background: linear-gradient(90deg, #2F353E, #2F353E 10%, transparent 10%, transparent 100%);"> F7 (10%)</div><br />
+        <div class="floors pointer" id="odc-1-f8" style="background: linear-gradient(90deg, #2F353E, #2F353E 10%, transparent 10%, transparent 100%);"> F8 (10%)</div><br />
+    </div>
+</div>
+<div class="row" id="buildings-container-odc-2" style="display: none;">
+    <div class="col-lg-4">
+        <div class="floors pointer" id="odc-2-f1" style="background: linear-gradient(90deg, #2F353E, #2F353E 10%, transparent 10%, transparent 100%);"> F1 (10%)</div>
+    </div>
+    <div class="col-lg-4">
+        <div class="floors pointer" id="odc-2-f2" style="background: linear-gradient(90deg, #2F353E, #2F353E 10%, transparent 10%, transparent 100%);"> F2 (10%)</div>
+    </div>
+    <div class="col-lg-4">
+        <div class="floors pointer" id="odc-2-f3" style="background: linear-gradient(90deg, #2F353E, #2F353E 10%, transparent 10%, transparent 100%);"> F3 (10%)</div>
+    </div>
+</div>
+
